@@ -7,7 +7,7 @@ You are required to develop a system that scrapes social media platforms and tra
 
 # Instructions:
     1. Repository Setup:
-        ◦ Fork the provided GitHub repository containing the problem description and a Docker-compose.yml file with an Nginx container.
+        ◦ Fork the provided GitHub repository containing the problem description.
         ◦ Clone the forked repository to your local machine.
     2. Branching:
         ◦ Create a new branch from the main branch named feature/sentiment-analysis.
@@ -37,6 +37,6 @@ You are required to develop a system that scrapes social media platforms and tra
 
 # Deadline:
     • Code Submission: Monday at 10:00 AM.
-    • Video Submission: Monday at 11:00 AM via WhatsApp.
+    • Video Submission: Monday at 11:30 AM via WhatsApp.
 
 # Note: You are encouraged to tackle as many aspects of the problem as possible, but you may choose to focus on specific areas according to your strengths and interests. However, ensure that any implemented section is well-documented and complete.
