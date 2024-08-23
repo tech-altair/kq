@@ -1,8 +1,11 @@
-# kq
-Problem Description: Sentiment Analysis Solution for Kenya Airways
-Background: Kenya Airways is looking to improve its overall travel experience by analyzing customer feedback from social media and travel review sites. Your task is to develop a sentiment analysis solution that scrapes relevant data, processes it, and provides insights into customer sentiments regarding the airline's services.
-Objective: You are required to develop a system that scrapes social media platforms and travel review sites for mentions of Kenya Airways, performs sentiment analysis on the collected data, and presents the findings in a user-friendly manner.
-Instructions:
+# Problem Description: Sentiment Analysis Solution for Kenya Airways
+# Background: 
+Kenya Airways is looking to improve its overall travel experience by analyzing customer feedback from social media and travel review sites. Your task is to develop a sentiment analysis solution that scrapes relevant data, processes it, and provides insights into customer sentiments regarding the airline's services.
+
+# Objective: 
+You are required to develop a system that scrapes social media platforms and travel review sites for mentions of Kenya Airways, performs sentiment analysis on the collected data, and presents the findings in a user-friendly manner.
+
+# Instructions:
     1. Repository Setup:
         ◦ Fork the provided GitHub repository containing the problem description and a Docker-compose.yml file with an Nginx container.
         ◦ Clone the forked repository to your local machine.
@@ -31,7 +34,9 @@ Instructions:
         ◦ Frontend/Backend Development: Quality, functionality, and user experience of the dashboard and backend API.
         ◦ Documentation: Clarity, thoroughness, and organization of the documentation.
         ◦ Presentation: Clarity and conciseness of the video explanation.
-Deadline:
+
+# Deadline:
     • Code Submission: Monday at 10:00 AM.
     • Video Submission: Monday at 11:00 AM via WhatsApp.
-Note: You are encouraged to tackle as many aspects of the problem as possible, but you may choose to focus on specific areas according to your strengths and interests. However, ensure that any implemented section is well-documented and complete.
+
+# Note: You are encouraged to tackle as many aspects of the problem as possible, but you may choose to focus on specific areas according to your strengths and interests. However, ensure that any implemented section is well-documented and complete.
