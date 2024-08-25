@@ -1,11 +1,15 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors"
+
 import tubeCommentsRouter from "./routes/youtubeComments.route.mjs"
 
 dotenv.config()
 
 
 const app = express()
+
+app.use(cors())
 
 app.use('/api', tubeCommentsRouter)
 

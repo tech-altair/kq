@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { fetchYouTubeComments } from "../scraping/youtubeComments.mjs";
+import { commentsScores } from "../controllers/comments.controller.mjs";
 
 const tubeCommentsRouter = Router()
 
 tubeCommentsRouter.route("/")
-                    .get(fetchYouTubeComments)
+                    .get(commentsScores)
 
 export default tubeCommentsRouter
