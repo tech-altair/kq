@@ -1,30 +1,67 @@
+import Sentiment from 'sentiment';
 import { google } from 'googleapis';
+import { PrismaClient } from '@prisma/client';
+
+const sentiment = new Sentiment();
+const prisma = new PrismaClient();
 
 const youtube = google.youtube({
   version: 'v3',
-  auth: 'AIzaSyCmdesGSYTjzGV7-0XTtHAo4sKY4ABEEDQ' // Replace with your API key
+  auth: 'AIzaSyCmdesGSYTjzGV7-0XTtHAo4sKY4ABEEDQ', // Replace with your API key
 });
 
-export const fetchYouTubeComments = async (req, res) => {
-    const videoId = 'TIn11pAyjP0'
+async function fetchYouTubeComments(videoId) {
   try {
     const response = await youtube.commentThreads.list({
       part: 'snippet',
       videoId: videoId,
-      maxResults: 100 // Fetch up to 100 comments per request
+      maxResults: 100,
     });
 
-    const comments = response.data.items.map(item => {
-      const comment = item.snippet.topLevelComment.snippet.textDisplay;
-      const author = item.snippet.topLevelComment.snippet.authorDisplayName;
-      return { author, comment };
-    });
-    res.send(comments)
-    console.log(comments);
+    return response.data.items.map(item => ({
+      author: item.snippet.topLevelComment.snippet.authorDisplayName,
+      comment: item.snippet.topLevelComment.snippet.textDisplay,
+    }));
   } catch (error) {
     console.error('Error fetching YouTube comments:', error);
   }
 }
 
-// Example usage: Fetch comments for a specific YouTube video
-// fetchYouTubeComments('TIn11pAyjP0'); // Replace 'VIDEO_ID_HERE' with the actual YouTube video ID
+function analyzeSentiments(comments) {
+  return comments.map(({ author, comment }) => {
+    const analysis = sentiment.analyze(comment);
+    return { author, comment, score: analysis.score };
+  });
+}
+
+async function saveSentimentScores(comments) {
+  try {
+    for (const { author, comment, score } of comments) {
+      await prisma.comment.create({
+        data: { author, comment, score },
+      });
+    }
+    console.log('Sentiment scores saved successfully.');
+  } catch (error) {
+    console.error('Error saving sentiment scores:', error);
+  }
+}
+
+async function fetchAndAnalyzeComments(videoId) {
+  const comments = await fetchYouTubeComments(videoId);
+  const analyzedComments = analyzeSentiments(comments);
+  await saveSentimentScores(analyzedComments);
+}
+  
+
+async function main() {
+  await fetchAndAnalyzeComments('Yv0tzAJ46uU'); // Replace with actual video ID
+
+  // Disconnect Prisma Client
+  await prisma.$disconnect();
+}
+
+main().catch((e) => {
+  console.error(e);
+  prisma.$disconnect();
+});

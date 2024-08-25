@@ -1,10 +1,10 @@
 import sql from 'mssql'
 
 export const dbConfig = {
-    user: process.env.user,
-    password: process.env.password,
-    server: process.env.server, 
-    database: process.env.database,
+    user: "sa",
+    password: "mysQl123",
+    server: "localhost", 
+    database: 'sentimentAnalysisApp',
     options: {
         encrypt: true, 
         trustServerCertificate: true 
