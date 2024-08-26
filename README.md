@@ -1,3 +1,44 @@
+# Solution 1.
+Scraping KQ customer reviews from TrustPilot website.
+
+  ### Scrapper file:
+   - `scrapper.py` - This is for scrapping data from the source website (Trustpilot website)
+        - Libraries used: ``Requests`` , ``BeautifulSoup`` , ``Pandas``
+         
+  ### Sentiment analysis file:
+   - `sentiment-analysis.py` - This is for cartegorizing customer reviews.
+        - Libraries used: ``Requests`` , ``BeautifulSoup`` , ``Pandas`` and ``transformers`` About pipeline here:<https://huggingface.co/transformers/v3.0.2/main_classes/pipelines.html>
+
+  ### Data pipeline file:
+    - `pipeline.py` - For automation of scraping, sentiment-analysis and storing the data.
+        - Libraries used: ``Requests`` , ``BeautifulSoup`` , ``Pandas`` and ``vaderSentiment`` <https://vadersentiment.readthedocs.io/en/latest/>
+
+
+## Frontend:
+ - A simple UI developed using `HTML/CSS/JS`
+
+## Backend:
+ - API developed using Django Rest Framework (DRF)
+    - Has the following endpoints: 
+       ``{{BASE_URL}}/api/reviews/`` - for listing reviews
+       ``{{BASE_URL}}/api/scrape/`` - for scraping reviews 
+
+
+# How to set up the project libraries
+ - Create virtual env: `python -m venv .yourEnv` and activate it `source .yourEnv/bin/activate`
+ - Install project requirements: `pip install -r requirements.txt`
+ - Runserver: `python manage.py runserver`
+ - To see the dashboard, visit: `http://127.0.0.1:8000/dashboard`
+
+
+ - PR Link: <https://github.com/mutemip/kq/tree/feature/sentiment-analysis>
+
+ - Project Documentation: <https://docs.google.com/document/d/1Hf39yE6rT_aOvxawuOb_U3QViuEnE5xLpMTDMi-wC1E/edit?usp=sharing>
+
+========================================================================================
+
+
+
 # Problem Description: Sentiment Analysis Solution for Kenya Airways
 # Background: 
 Kenya Airways is looking to improve its overall travel experience by analyzing customer feedback from social media and travel review sites. Your task is to develop a sentiment analysis solution that scrapes relevant data, processes it, and provides insights into customer sentiments regarding the airline's services.
