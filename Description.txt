@@ -1,0 +1,13 @@
+Description
+webscrap is the class where I open the html pages to retrieve data to be analyzed for the sentiment analyzer.
+I used urlopen library which has the necessary functions to run urls and capture the html page data.
+spacy and BeautifulSoup are libraries that I used to process the html pages into readable format and further refine them to sentences.
+This is done at the nlp(text), where the data from the html pages is processed to get the desired length of sentences. The sentences can further be processed to give words and classify them according to their role in the sentences but theat has been commented out in the code.
+I created an object "sorted" which is parsed to the next class sentimentanalyzer.
+
+sentimentanalyzer breaks down the sentences and derives meaning from them to determine whether they are positive or negative or neutral.
+The nltk library is used to process the sentences through various functions such as tokenization, removing stopwords and making the data consistent in its raw language format(lemmatization).
+First, data is loaded in a csv format to make interpretable in the functions containedin the nltk library.
+Once it is loaded and read into a data frame, it is tokenized. Here, sentences are broken down into words which are put in tokens. Stop words are filtered, and the words are broken down into the their base format(lematized) then the resultant data is loaded to analyse the words based on its meaning to categorize them as either positive or negative.
+
+The code is not complete at this part. The functions to clean up the data is set but loading them to be processed has a syntax malfunction.
