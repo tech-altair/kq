@@ -18,7 +18,7 @@ const chartData = {
       {
         label: 'Sentiments',
         data: [positive, negative, neutral],
-        backgroundColor: ['#4caf50', '#f44336', '#ffeb3b'],
+        backgroundColor: ['#4caf50', '#f44336', '#0277bd'],
       },
     ],
   };
