@@ -1,43 +1,137 @@
-# Problem Description: Sentiment Analysis Solution for Kenya Airways
-# Background: 
-Kenya Airways is looking to improve its overall travel experience by analyzing customer feedback from social media and travel review sites. Your task is to develop a sentiment analysis solution that scrapes relevant data, processes it, and provides insights into customer sentiments regarding the airline's services.
+# YouTube Comments Sentiment Analysis
 
-# Objective: 
-You are required to develop a system that scrapes social media platforms and travel review sites for mentions of Kenya Airways, performs sentiment analysis on the collected data, and presents the findings in a user-friendly manner.
+## Description
 
-# Instructions:
-    1. Repository Setup:
-        ◦ Fork the provided GitHub repository containing the problem description.
-        ◦ Clone the forked repository to your local machine.
-    2. Branching:
-        ◦ Create a new branch from the main branch named feature/sentiment-analysis.
-    3. Implementation:
-        ◦ Data Scraping: Implement a solution that scrapes data from at least two social media platforms and one travel review site for mentions of Kenya Airways.
-        ◦ Sentiment Analysis: Use natural language processing (NLP) techniques to analyze the sentiments expressed in the scraped data. The analysis should categorize sentiments into positive, negative, or neutral.
-        ◦ Data Pipeline: Design a data pipeline that automates the scraping, analysis, and storage of results.
-        ◦ System Design: Consider how your system handles scalability, error handling, and system security (e.g., API key management, rate limiting).
-        ◦ Frontend Development: Build a simple dashboard that displays the sentiment analysis results. It should include visualizations like charts or graphs that provide insights into customer sentiments over time.
-        ◦ Backend Development: Develop the backend API that handles the data scraping, processing, and serves the analyzed data to the frontend.
-        ◦ User Experience: Ensure that the dashboard is user-friendly, with a focus on clarity and ease of navigation.
-    4. Documentation:
-        ◦ Clearly document your code and provide a README.md file that explains how to set up and run your solution.
-        ◦ Include instructions for how to use the data scraping and sentiment analysis features, and describe any assumptions or limitations of your solution.
-    5. Submission:
-        ◦ Push your branch feature/sentiment-analysis to the forked GitHub repository.
-        ◦ Create a pull request (PR) from your branch to the main branch in the forked repository.
-        ◦ Attach any relevant documentation, links, or notes to the PR.
-        ◦ Send a short video clip (maximum 5 minutes) via WhatsApp, explaining your work and demonstrating how to use your solution. The video should be submitted by 11:00 AM on the submission day.
-    6. Evaluation Criteria:
-        ◦ Version Control: Proper use of Git branching, commits, and pull requests.
-        ◦ Data Pipeline: Robustness and efficiency of the data scraping and sentiment analysis pipeline.
-        ◦ System Design: Scalability, security, and overall architecture of the solution.
-        ◦ Frontend/Backend Development: Quality, functionality, and user experience of the dashboard and backend API.
-        ◦ Documentation: Clarity, thoroughness, and organization of the documentation.
-        ◦ Presentation: Clarity and conciseness of the video explanation.
+The project is a web scraping tool developed to analyze sentiments from YouTube video comments. Using the YouTube Data API, the tool extracts comments from specified YouTube videos and performs sentiment analysis to classify comments as positive, negative, or neutral. I used React, Vite, and Material UI to create a visualized represenation of the results.
 
-# Deadline:
-    • Code Submission: Monday at 10:00 AM.
-    • Video Submission: Monday at 11:30 AM via WhatsApp.
+## Table of Contents
 
-# Note: 
-You are encouraged to tackle as many aspects of the problem as possible, but you may choose to focus on specific areas according to your strengths and interests. However, ensure that any implemented section is well-documented and complete.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Environment Setup](#environment-setup)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository**:
+
+```bash
+
+   git clone https://github.com/hanningto/kq.git
+   cd kq
+
+   ```
+2. **Navigate to the backend directory**:
+
+```bash
+
+cd backend/src
+Install backend dependencies:
+```
+
+```bash
+npm install
+```
+3. **Navigate to the frontend directory**:
+
+```bash
+cd ../frontend/sentimentalAnalysisDashboard
+Install frontend dependencies:
+```
+
+```bash
+npm install
+```
+4. **Set up the .env file for the backend**:
+
+Create a .env file in the backend directory and add your YouTube Data API key:
+
+```makefile
+YOUTUBE_API_KEY=your_youtube_api_key_here
+```
+
+# Usage
+## Running the Backend
+1. **run the scraping code**:
+
+```bash
+cd backend/src/scraping
+node youtubeComments.mjs
+```
+This will run the code requiered to fetch and analyse and save the comments from youtube.
+
+```bash
+cd ..
+npm run dev
+```
+This will run the server
+
+# Running the Frontend
+Start the frontend development server:
+
+```bash
+cd frontend/sentimentalAnalysisDashboard
+npm run dev
+```
+This will start the frontend development server, and you can access the dashboard at http://localhost:3000.
+
+
+
+# Features
+1. YouTube Data Extraction: Extract comments from YouTube videos using the YouTube Data API.
+2. Sentiment Analysis: Analyze the sentiment of comments using a sentiment analysis library.
+3. Visualization: Visualize the sentiment analysis results on a web dashboard with charts.
+4. Redux State Management: Manage the state of the sentiment data using Redux Toolkit for a seamless user experience.
+
+# Environment Setup
+## Prerequisites
+Node.js: Make sure you have Node.js installed (v12 or later).
+YouTube Data API Key: You will need a YouTube Data API key to fetch comments from YouTube videos.
+
+## Backend
+Express: The backend server is built with Express.js to handle API requests.
+Prisma: Prisma ORM is used for managing the database and interacting with it efficiently.
+MSSQL: Sql server is used for saving the analyzed user comments
+
+## Frontend
+React: The frontend is built using React with functional components.
+Vite: Vite is used as the development server for fast development and hot module replacement.
+Material UI: Material UI is used for UI components and styling, making the dashboard look clean and modern.
+Chart.js: Chart.js is used for visualizing the sentiment data in bar charts.
+Contributing
+Contributions are welcome! To contribute to this project:
+
+# Additional Inforamtion
+
+## Procedure to Obtain a YouTube Video ID
+1. **Open YouTube**:
+
+Go to the YouTube website or open the YouTube app on your device.
+2. **Find the Video:**
+
+Search for the video you are interested(One concerning Kenya Airways) in by typing keywords related to the video in the search bar and hitting the "Enter" key.
+3. **Open the Video:**
+
+Click on the video from the search results to open it.
+4. **Get the Video URL:**
+
+Once the video is open, look at the URL in your browser's address bar. It will look something like this:
+https://www.youtube.com/watch?v=Yv0tzAJ46uU
+5. **Identify the Video ID:**
+
+The YouTube video ID is the string of characters that comes after the v= in the URL.
+In the example URL above, the video ID is Yv0tzAJ46uU.
+6. **Copy the Video ID:**
+
+Highlight the video ID in the URL, right-click and select "Copy" or press Ctrl+C (Windows) or Cmd+C (Mac) to copy the video ID.
+
+
+# Limitations
+1. You have to get the video id manualy from youtube
+2. You have to edit add the video url directly into the code
+3. You have to run the scraping code manually in order to get the comments from youtube
