@@ -69,7 +69,8 @@ async function fetchAndAnalyzeComments(videoId) {
 
 // Main function to run the program
 async function main() {
-  await fetchAndAnalyzeComments('Yv0tzAJ46uU'); // passing the video id
+  const prevVidoesIds = ['_ZygCEeb5iU',"nle6K7GvT0U"]
+  await fetchAndAnalyzeComments('_ZygCEeb5iU'); // passing the video id
 
   // Disconnect Prisma Client to close the database connection
   await prisma.$disconnect();
@@ -77,6 +78,6 @@ async function main() {
 
 // Execute the main function and handle any errors
 main().catch((e) => {
-  console.error(e); // Log any errors that occur during execution
-  prisma.$disconnect(); // Ensure Prisma disconnects even if an error occurs
+  console.error(e); 
+  prisma.$disconnect(); // Prisma disconnects 
 });

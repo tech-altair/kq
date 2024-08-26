@@ -26,12 +26,20 @@ export const commentsScores = async (req, res) => {
     });
 
     // Prepare the response object
-    const categoryCount = { positive, negative, neutral };
+    const commentsCount = positive + negative + neutral;
+    const sentiments = { positive, negative, neutral };
+    const videoCount = 3; //indicate the number of videos as used in the scraping
 
     // Send the response
-    res.send(categoryCount);
+    res
+      .status(200)
+      .json({
+        sentiments: sentiments,
+        commentsCount: commentsCount,
+        videosCount: videoCount,
+      });
   } catch (error) {
-    console.error('Error fetching comment scores:', error);
-    res.status(500).send('Error fetching comment scores');
+    console.error("Error fetching comment scores:", error);
+    res.status(500).send("Error fetching comment scores");
   }
 };
