@@ -19,7 +19,7 @@ Scraping KQ customer reviews from TrustPilot website.
 
 ## Backend:
  - API developed using Django Rest Framework (DRF)
-    - Has the following endpoints:
+    - Has the following endpoints: 
        ``{{BASE_URL}}/api/reviews/`` - for listing reviews
        ``{{BASE_URL}}/api/scrape/`` - for scraping reviews 
 
@@ -30,9 +30,13 @@ Scraping KQ customer reviews from TrustPilot website.
  - Runserver: `python manage.py runserver`
  - To see the dashboard, visit: `http://127.0.0.1:8000/dashboard`
 
-========================================================================================================================================
 
-========================================================================================================================================
+ - PR Link: <https://github.com/mutemip/kq/tree/feature/sentiment-analysis>
+
+ - Project Documentation: <https://docs.google.com/document/d/1Hf39yE6rT_aOvxawuOb_U3QViuEnE5xLpMTDMi-wC1E/edit?usp=sharing>
+
+========================================================================================
+
 
 
 # Problem Description: Sentiment Analysis Solution for Kenya Airways
